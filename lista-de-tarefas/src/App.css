@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+:root {
+  --cor-primaria: #0a4f70;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: var(--cor-primaria);
+}
+
+button {
+  cursor: pointer;
+}

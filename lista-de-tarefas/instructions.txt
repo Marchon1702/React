@@ -1,0 +1,24 @@
+Para criar uma aplicação React, digite no terminal npx create-react-app "Nome da pasta" (caso você ja esteja com o terminal aberto na pagina, digite apenas um .)
+
+A aplicação React cria todo aquele boilerPlate anterior, com babel, etc, alguns destes arquivos não aparecem diretamente pra nós, pois são configurações padrões internas, caso queiramso fazer alguma alteração nestes arquivos devemos executar o script eject que está configurado no package.json.
+
+Para abrir seu projeto React no navegador basta ir no terminal e digitar npm start.
+
+JSX: é igual a elementos html usados para manipular o próprio html em uma aplicação React, (Sempre que usarmos o jsx devemos importar o react)
+
+Sobre componentes.
+
+export default function App() {
+  // Isto é um componente React. No código fonte está sendo parecido com o HTML, mas este código passa pelo o webpack que traduz pro navegador em JavaScript.
+  return (
+    // Esta função não aceita mais de arquivo arquivo html sem estar envolvido em alguma div ou algo do tipo então qunado quisermos enviar mais de um elemento html temos que envolve-los em uma div ou então em fragment que é um elemento vazio. O fragment n cria uma caixa para ele, é somente um elemento vazio.
+    <>
+      <h1> Hello World!</h1>
+      <p>lorem inpsum dorlor sit ament.</p>
+    </>
+
+  )};
+
+
+Normalmente esta função não exporta componentes com estados. Então normalmente componentes que precisam de estados são feitos com classes e se cria uma pasta (components) depois exportado para o app e assim ele renderizará com estado.
+

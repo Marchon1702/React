@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+.main {
+  background: #fff;
+
+  padding: 30px;
+  margin: 50px auto;
+
+  max-width: 500px;
+
+  border-radius: 4px;
+
+  box-shadow: 1px 1px 1px #00000088;
+}
+
+.main h1 {
+  text-align: center;
+}
+
