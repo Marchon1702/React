@@ -3,8 +3,6 @@ import React, {Component} from 'react';
 // Criando Css para meu componente.
 import './Main.css'
 
-//Importando icons da bibloteca react-icons
-
 // Importando componente do form.
 import Form from './Form'
 

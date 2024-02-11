@@ -1,0 +1,18 @@
+// Tudo que for rotas deve ser envolvido em browser router. A função Header tem o nav que usaremos os links lá então ela deve ser envolvida com BrowserRouter. 
+import { BrowserRouter } from 'react-router-dom';
+import Header from './components/Header';
+
+// Importando estilo global da aplicação.
+import GlobalStyle from './styles/GlobalStyles';
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Header/>
+      <Routes/>
+      <GlobalStyle/>
+    </BrowserRouter>  
+  );
+}
+
+export default App;

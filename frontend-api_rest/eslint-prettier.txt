@@ -1,0 +1,1 @@
+Quando for criar uma aplicação real, não se esqueça de instalar eslint e prettier atualizado, pois eles servem para mantermos um padrão de projeto que esteja sendo feito em equipe. 

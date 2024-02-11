@@ -1,0 +1,29 @@
+.board {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px auto;
+
+    height: 400px;
+    width: 400px;
+}
+
+.board .plays {
+    display: grid;
+    place-items: center;
+
+    height: 33%;
+    width: 33%;
+
+    font-size: 5em;
+    color: #000008a0;
+    
+    border: 1px solid #000008a0;
+    
+    cursor: pointer;
+}
+
+#b1, #b2, #b3 {
+    margin: -5px 0px;
+    border-top: none;
+    border-bottom: none;
+}

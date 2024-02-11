@@ -1,0 +1,5 @@
+Pages é uma pasta criada para armazenar literalmente sua paginas.
+
+Aqui vc cria as paginas que seu projeto conterá.
+
+Em components criamos arquivos que todas as paginas conterÃo, como por exemplo um header, com menu, logo etc ou um footer.
