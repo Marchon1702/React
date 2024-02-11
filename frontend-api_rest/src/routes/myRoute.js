@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 
 // Nosso component redirecionador recebe como parametro o componente que esta sendo acessado, uma função criada por nós como forma de validação se o user esta logado ou n e o resto. 
 export default function MyRoute({ component: Component, isClosed, ...rest }) {
-    const isLoggedIn = false;
+    const isLoggedIn = true;
 
     if( isClosed && !isLoggedIn) {
         return (

@@ -5,6 +5,9 @@ import React from 'react';
 // Importando handles de rota. (Aqui tinha um Route)
 import { Switch } from 'react-router-dom';
 
+// Importando o Toast para emitir mensagens.
+//import { toast } from 'react-toastify' // Podemos lançar mensagens Toast da onde nós quisermos basta importa-las e adicionar
+
 import MyRoute from './myRoute';
 import Login from '../pages/Login/';
 import Page404 from '../pages/Page404';
@@ -12,6 +15,10 @@ import Page404 from '../pages/Page404';
 // Criando função para rotas.
 
 export default function Routes() {
+    //toast.error('Deu ruim familia')
+    //toast.success('Deu bom familia')
+    // temos outros campos de mensagens como mensagens de warning
+
     return(
         // Switch: Uma funcionalidade que sinaliza pro servidor para abrir apenas uma rota por vez.
 

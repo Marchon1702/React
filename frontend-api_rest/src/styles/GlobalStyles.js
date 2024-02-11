@@ -2,7 +2,9 @@
 // Importando função do React para criar uma "Regra global css"
 import { createGlobalStyle } from 'styled-components';
 // Importando cores do projeto.
-import {primaryDarkColor, primaryColor} from '../config/colors'
+import * as colors from '../config/colors'
+// Importando css Toast Container
+import 'react-toastify/dist/ReactToastify.css'; // Essa é uma importação padrão.
 
 // Importando styled para estilizar um main global.
 import styled from 'styled-components';
@@ -18,7 +20,7 @@ export default createGlobalStyle`
     }
     
     body {
-        background: ${primaryDarkColor};
+        background: ${colors.primaryDarkColor};
     }
 
     html, body, #root {
@@ -26,7 +28,7 @@ export default createGlobalStyle`
     }
 
     button {
-        background-color: ${primaryColor};
+        background-color: ${colors.primaryColor};
         border: none;
         color: #fff;
         border-radius: 4px;
@@ -36,12 +38,23 @@ export default createGlobalStyle`
 
     a {
         text-decoration: none;
-        color: ${primaryColor};
+        color: ${colors.primaryColor};
     }
 
     ul {
         list-style: none;
     }
+
+    // Caso queiramos modificar o estilo do toastify temos que fazer o seguinte.
+    body .Toastify .Toastify__toast-container .Toastify__toast--success {
+        background-color: ${colors.successColor};
+        color: #fff;
+    } 
+
+    body .Toastify .Toastify__toast-container .Toastify__toast--error {
+        background-color: ${colors.warningColor};
+        color: #fff;
+    } 
 `
 // Estilizando um main global ara todas as paginas.
 export const Container = styled.section`
