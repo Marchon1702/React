@@ -11,7 +11,7 @@ export default function Login() {
     // Se criamos dessa forma o bloco da função anonima só será executado uma fez quando a pagina atualizar. o Array vazio significa que poderiamos botar variaveis de estado e quando esse estado muda o bloco anonimo executa.
     React.useEffect(() => {
         async function getData() {
-            const response = await axios.get('alunos')
+            const response = await axios.get('http://localhost:3000')
             console.log(response)
         }
 
