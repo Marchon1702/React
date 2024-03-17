@@ -1,0 +1,9 @@
+Imperatividade: É quando passamos um código de forma direta por exemplo, quando selecionamos alguma div especifica, acessamos seus estilo e mudamos a cor dela diretamente.
+
+Declaratividade: é quando declaramos caracteristicas iniciais para variaveis e quanod mudamos o state delas, elas vão se adaptando ao longo do código. (React é considerado declarativo)
+
+Reativo: é algo que reage a mudança diretamente atualizando toda a página.
+
+Conclusão: O React é declarativo porque por baixo dos panos ele avalia pelo virtualDOM somente oque precisa ser mudado e após essa avaliação ele declara pro DOM do navegador apenas a mudança especifica, fazendo com que a aplicação fique melhor otimizada. Se fosse no JavaScript puro, mesmo que a função fosse onChange nÃo ocorreira de forma tão fluida, e a renderização seria mais pesada.
+
+Interação entre virtualDOM e Dom real: quando mudamos um state o virtualDOM automaticamente faz um comparação entre ele é o DOM real, logo ele oque mudou entre ele e o DOM real, fazendo com que o DOM real seja auterado somente onde ele for diferente.
