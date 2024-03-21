@@ -9,6 +9,7 @@ import Galeria from "./components/Galeria";
 
 // importando JSON de fotos.
 import fotos from './fotos.json'
+import ModalZoom from "./components/ModalZoom";
 
 const FundoGradiente = styled.div`
   background-image: linear-gradient(
@@ -48,6 +49,29 @@ const ConteudoGaleria = styled.section`
 function App() {
 
   const [galeryFotos, setGaleryFotos ] = useState(fotos)
+  const [fotoSelecionada, setFotoSelecionada] = useState(null)
+
+  // Alternar em ingles é toogle, palavra bastante utilizada em input de on/off.
+  const aoAlternarFavorito = (foto) => {
+    // Quando chamamos esta função no modal estamos lidando com a foto selecionada e não coma foto da galeria por isso quando for clicado no favorito pelo modal temos que reSetar a variavel fotoSelecionada.
+    // reSetando a foto selecionada para que o icone tbm se altere no modal:
+    // Se o id da foto clicada for igual ao id da fotoSelecionada (?. === e não for nulo) essa foto selecionada é reSetada recebendo um favorito de valor contraio ao seu valor atual.
+    if(foto.id === fotoSelecionada?.id) {
+      setFotoSelecionada(
+        {
+          ...fotoSelecionada,
+          favorito: !fotoSelecionada.favorito
+        }
+      )
+    }
+    // retorna um novo array com o map que pra cada objeto se cria um novo adicionando o atributo favorito, se o id da foto da galeria iterada for igual a foto clicada então esse favorito recebe o contrario do que ele é (true ou false), caso a foto da galeria iterada não for a mesma que foi clicada então seu favorito recebe oque ele ja é.
+    setGaleryFotos(galeryFotos.map( fotoDaGaleria => {
+      return {
+        ...fotoDaGaleria,
+        favorito: fotoDaGaleria.id === foto.id ? !foto.favorito : fotoDaGaleria.favorito
+      }
+    }))
+  }
 
   return (
     <FundoGradiente>
@@ -61,12 +85,20 @@ function App() {
               backgroundImage={"/imagens/banner.png"}
               texto={"A galeria mais completa de fotos do espaço!"}
             />
-            <Galeria 
+            {/* Fazendo prop.drilling com aoFotoSelecioanada, essa função recebe um parametro q seta ele em foto selecionada, para pegar essa foto usamos galeira como intermediador e imagens para pegar a foto clicada e setar em FotoSelecionada.*/} 
+            <Galeria              
+              aoFotoSelecionada={ foto => setFotoSelecionada(foto)}
+              aoAlternarFavorito={aoAlternarFavorito}
               fotos={ galeryFotos }
             />
           </ConteudoGaleria>
         </MainContainer>
       </AppContainer>
+      <ModalZoom 
+        foto={fotoSelecionada} 
+        aoFechar={() => setFotoSelecionada(null)} 
+        aoAlternarFavorito={aoAlternarFavorito}
+      />
     </FundoGradiente>
   );
 }

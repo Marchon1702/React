@@ -1,0 +1,7 @@
+E por fim, entendendo como o Overlay funciona. Ele é, tradicionalmente, uma camada que se estende por toda a tela e é utilizada, geralmente, como uma espécie de cortina que obscurece o conteúdo por trás dela. Isso pode ser usado para focar a atenção do usuário em um diálogo específico ou em qualquer outro elemento que você queira destacar.
+
+background-color: rgba(0, 0, 0, 0.7);: Esta é uma cor semi-transparente. O rgba permite definir cores usando o formato de Red (vermelho), Green (verde), Blue (azul) e Alpha (transparência). Aqui, estamos usando preto (0, 0, 0) com 70% de opacidade (0.7). Isso cria um efeito de sombreamento, permitindo que você veja um pouco do que está por trás, mas ainda obscurece o suficiente para destacar algo em cima dele.
+
+position: fixed;: O posicionamento fixo é usado para fazer com que o elemento esteja sempre visível na viewport, independentemente da rolagem da página. É perfeito para o nosso Overlay, pois queremos que ele cubra tudo.
+
+top: 0; right: 0; bottom: 0; left: 0;: Estas quatro propriedades garantem que o Overlay se estenda por toda a tela. Definindo todos os lados para 0, o overlay cobrirá toda a viewport, do topo ao fundo e de um lado ao outro, independente do tamanho da tela.

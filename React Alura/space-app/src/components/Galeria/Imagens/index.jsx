@@ -11,6 +11,7 @@ const ImagensStyles = styled.figure`
   border-radius: 20px;
   box-shadow: 1px 4px 5px #00000026;
   color: #D9D9D9;
+  background-color: #041D3D;
 
   img {
     width: 100%;
@@ -43,22 +44,26 @@ const ImagensStyles = styled.figure`
     font-weight: 400;
     font-size: 1.7em;
     margin: 0px 4px;
+    cursor: pointer;
   }
 
 `
 
-const Imagens = ({ endereco, descricao, fonte }) => {
+const Imagens = ({foto, expandida = false, aoZoomAplicado, aoAlternarFavorito }) => {   
+
     return (
-        <ImagensStyles>
-            <img src={ endereco } alt={ descricao } />
+        <ImagensStyles $expandida={expandida}>
+            <img src={ foto.path } alt={ foto.titulo } />
             <figcaption>
                 <header>
-                    <h3> { descricao } </h3>
-                    <p> { fonte } </p>
+                    <h3> { foto.titulo } </h3>
+                    <p> { foto.fonte } </p>
                 </header>
                 <footer>
-                    <button> <IoIosHeartEmpty /> </button>
-                    <button> <CgExpand /> </button>
+                    <button onClick={() => aoAlternarFavorito(foto)}>
+                    {foto.favorito ? <IoMdHeart/> : <IoIosHeartEmpty />}                      
+                    </button>
+                    {!expandida && <button> <CgExpand onClick={() => aoZoomAplicado(foto)} /> </button>}
                 </footer>
             </figcaption>
         </ImagensStyles>
