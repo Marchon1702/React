@@ -28,7 +28,7 @@ const AppContainer = styled.div`
   width: 1240px;
   // centralizando a div
   margin: 0 auto;
-  // Reforçando que a largura total da aplicação é 1440px informando que o maximo que a div pode chegar é 100% da tela a fim de evitar quebra de componentes.
+  // Reforçando que a largura total da aplicação é 1240px informando que o maximo que a div pode chegar é 100% da tela a fim de evitar quebra de componentes.
   max-width: 100%;
 `;
 
