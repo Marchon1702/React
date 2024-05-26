@@ -1,5 +1,5 @@
 // Criando um hook customizado para exportar funções de codigos complexos.
-import { useContext, useEffect } from "react"
+import { useContext, useEffect, useMemo } from "react"
 import { CarrinhoContext } from "../context/CarrinhoContext"
 
 // Aqui ficará todas as funções relacionadas ao carrinho, após importar o CarrinhoContext nós podemos manipular essa variavel de diversas formas através de funções.
@@ -63,8 +63,8 @@ export const useCarrinhoContext = () => {
     setCarrinho(produto)
   }
 
-  useEffect(() => {
-    const { quantidadeTemp, totalTemp } = carrinho.reduce((ac, produto) => ({
+  const { quantidadeTemp, totalTemp } = useMemo(() => {
+    return carrinho.reduce((ac, produto) => ({
       quantidadeTemp: ac.quantidadeTemp + produto.quantidade,
       totalTemp: ac.totalTemp + produto.preco * produto.quantidade,
     }),
@@ -73,9 +73,12 @@ export const useCarrinhoContext = () => {
         totalTemp: 0,
       }
     );
+  }, [carrinho])
+
+  useEffect(() => {
     setQuantidade(quantidadeTemp)
     setValorTotal(totalTemp)
-  }, [carrinho])
+  })
 
 
 
