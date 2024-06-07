@@ -1,0 +1,24 @@
+.container {
+    padding: .5rem;
+    margin-top: .5em;
+    margin-right: 12px;
+    width: 282px;
+    background-color: #e2e2e2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.capa {
+    width: 100%;
+}
+
+.container h2,
+.favoritar {
+  text-align: center;
+}
+
+.favoritar {
+    margin-top: .5rem;
+    width: 25px;
+}

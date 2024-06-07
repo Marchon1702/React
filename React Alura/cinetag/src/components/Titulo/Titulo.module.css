@@ -1,0 +1,10 @@
+.titulo {
+  display: block;
+  margin: 24px auto;
+
+  h1 {
+    font-size: 2em;
+    font-weight: 400;
+    text-align: center;
+  }
+}
