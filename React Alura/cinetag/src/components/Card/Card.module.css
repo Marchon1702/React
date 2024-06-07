@@ -21,4 +21,11 @@
 .favoritar {
     margin-top: .5rem;
     width: 25px;
+    cursor: pointer;
+}
+
+.link {
+    text-decoration: none;
+    text-align: left;
+    color: #000;
 }

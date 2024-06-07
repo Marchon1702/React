@@ -1,0 +1,10 @@
+.videoSection {
+    width: 100%;
+    display: block;
+    margin: auto;
+
+    iframe {
+        display: block;
+        margin: 24px auto;
+    }
+}
